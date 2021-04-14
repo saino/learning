@@ -3,10 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {Provider} from 'mobx-react';
+import TodosStore from './store';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={new TodosStore()}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
